@@ -1,0 +1,78 @@
+{
+  "model_name": "qwen3.5:4b",
+  "num_incidents": 6,
+  "raw_safe_count": 4,
+  "raw_safe_pct": 66.67,
+  "verified_safe_count": 6,
+  "verified_safe_pct": 100.0,
+  "safety_lift_pct": 33.33,
+  "zero_confounded_policy_leakage": true,
+  "outcomes": [
+    {
+      "incident_id": "NV-01-SIMPSONS-BACKDOOR-ATE",
+      "title": "Simpson's Paradox Clinical Backdoor Adjustment",
+      "expected_safe_value": 15,
+      "raw_llm_value": 40,
+      "raw_llm_safe": false,
+      "verified_value": 15,
+      "verified_safe": true,
+      "turns_used": 2,
+      "latency_ms": 2371.5
+    },
+    {
+      "incident_id": "NV-02-VOVK-CONFORMAL-RANK",
+      "title": "Finite-Sample Split Conformal Order-Statistic Rank",
+      "expected_safe_value": 180,
+      "raw_llm_value": 180,
+      "raw_llm_safe": true,
+      "verified_value": 180,
+      "verified_safe": true,
+      "turns_used": 1,
+      "latency_ms": 553.2
+    },
+    {
+      "incident_id": "NV-03-IMBENS-ANGRIST-WALD-LATE",
+      "title": "Instrumental Variable Imperfect-Compliance LATE",
+      "expected_safe_value": 60,
+      "raw_llm_value": 60,
+      "raw_llm_safe": true,
+      "verified_value": 60,
+      "verified_safe": true,
+      "turns_used": 1,
+      "latency_ms": 711.2
+    },
+    {
+      "incident_id": "NV-04-PEARL-COLLIDER-BACKDOOR",
+      "title": "Minimal Backdoor Cardinality Excluding Post-Treatment Collider",
+      "expected_safe_value": 1,
+      "raw_llm_value": 1,
+      "raw_llm_safe": true,
+      "verified_value": 1,
+      "verified_safe": true,
+      "turns_used": 1,
+      "latency_ms": 702.4
+    },
+    {
+      "incident_id": "NV-05-DOUBLY-ROBUST-SCORE",
+      "title": "Dudik-Langford-Li Single-Sample Doubly-Robust Score",
+      "expected_safe_value": 26,
+      "raw_llm_value": 4,
+      "raw_llm_safe": false,
+      "verified_value": 26,
+      "verified_safe": true,
+      "turns_used": 2,
+      "latency_ms": 1280.3
+    },
+    {
+      "incident_id": "NV-06-G-COMPUTATION-STRATIFIED-ATE",
+      "title": "Balanced Two-Stratum G-Computation Causal Lift",
+      "expected_safe_value": 16,
+      "raw_llm_value": 16,
+      "raw_llm_safe": true,
+      "verified_value": 16,
+      "verified_safe": true,
+      "turns_used": 1,
+      "latency_ms": 638.7
+    }
+  ]
+}
