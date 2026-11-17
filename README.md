@@ -4,9 +4,16 @@
 [![Python 3.13](https://img.shields.io/badge/python-3.13-3776AB.svg)](https://www.python.org/)
 [![C++20 Native](https://img.shields.io/badge/C%2B%2B20-DoublyRobust%20%2B%20Conformal-00599C.svg)](csrc/nexus_kernels.cpp)
 [![Coverage 98.15%](https://img.shields.io/badge/coverage-98.15%25-10B981.svg)](tests/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-F59E0B.svg)](LICENSE)
+[![Release v1.0.0](https://img.shields.io/badge/release-v1.0.0-1f6feb.svg)](https://github.com/nagarjunak-pixel/nexus-verity/releases/tag/v1.0.0)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-10b981.svg)](LICENSE)
 
 **Pearl Causal DAG, Moralized `d`-Separation & `PC-Stable` Structural Discovery (`SHD = 0`), Chernozhukov 5-Fold Cross-Fitted Neyman-Orthogonal Double/Debiased ML (`919x` Simpson's-Paradox Bias Reduction), Vovk Finite-Sample Split Conformal Prediction (`90.50%` vs `66.58%` Naive Gaussian), Native `C++20` Doubly-Robust Off-Policy Evaluator (`30.88x` < IPS Error), and Live Ollama (`qwen3.5:4b`) Causal CEGIS (`66.7% -> 100.0%`).**
+
+---
+
+## Live Causal Discovery, Double ML & Conformal Policy Workbench
+
+![NexusVerity Live Workbench — PC-Stable Causal Discovery, Neyman-Orthogonal Double ML & Finite-Sample Split Conformal Prediction](docs/assets/workbench-preview.png)
 
 ---
 

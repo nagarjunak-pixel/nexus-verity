@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use or reference nexus-verity in research or enterprise AI architecture, please cite it as below."
+type: software
+title: "NexusVerity: Pearl Causal DAG & PC-Stable Discovery, Chernozhukov Cross-Fitted Double/Debiased ML, Split Conformal Prediction & C++20 Doubly-Robust Policy Evaluator"
+version: 1.0.0
+date-released: "2026-11-17"
+license: Apache-2.0
+url: "https://nagarjunak-pixel.github.io/projects.html#nexus-verity"
+repository-code: "https://github.com/nagarjunak-pixel/nexus-verity"
+authors:
+  - family-names: "Kamireddy"
+    given-names: "Nagarjuna Reddy"
+    affiliation: "Suryagentic AI"
