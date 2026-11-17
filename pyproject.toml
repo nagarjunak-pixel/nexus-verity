@@ -7,7 +7,7 @@ name = "nexus-verity"
 version = "1.0.0"
 description = "Causal inference in Python — PC discovery, d-separation, cross-fitted double ML, split conformal, C++ doubly-robust OPE. Educational reference implementation"
 readme = "README.md"
-license = { text = "MIT" }
+license = { text = "Apache-2.0" }
 requires-python = ">=3.12"
 authors = [
     { name = "Nagarjuna Kamireddy", email = "sendemailtonagarjuna@gmail.com" },

@@ -1,4 +1,4 @@
-name: NexusVerity Deterministic CI
+name: NexusVerity CI
 
 on:
   push:
