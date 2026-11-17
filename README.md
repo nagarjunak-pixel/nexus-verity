@@ -7,7 +7,9 @@
 [![Release v1.0.0](https://img.shields.io/badge/release-v1.0.0-1f6feb.svg)](https://github.com/nagarjunak-pixel/nexus-verity/releases/tag/v1.0.0)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-10b981.svg)](LICENSE)
 
-**Pearl Causal DAG, Moralized `d`-Separation & `PC-Stable` Structural Discovery (`SHD = 0`), Chernozhukov 5-Fold Cross-Fitted Neyman-Orthogonal Double/Debiased ML (`919x` Simpson's-Paradox Bias Reduction), Vovk Finite-Sample Split Conformal Prediction (`90.50%` vs `66.58%` Naive Gaussian), Native `C++20` Doubly-Robust Off-Policy Evaluator (`30.88x` < IPS Error), and Live Ollama (`qwen3.5:4b`) Causal CEGIS (`66.7% -> 100.0%`).**
+**Educational reference implementation of core causal-inference methods: PC-algorithm structure discovery with moralized `d`-separation and backdoor checks, 5-fold cross-fitted double/debiased ML, split conformal prediction, and a doubly-robust off-policy estimator with a small C++20 helper.**
+
+All results come from small, seeded synthetic datasets generated in code (e.g. `SHD = 0` on a 5-variable DAG, DML ATE `+2.4932` vs true `+2.5000` where the naive estimate is `-3.7614`, conformal coverage `90.50%` vs `66.58%` for a naive Gaussian interval, DR error `30.88x` lower than IPS) plus a 6-question check of a local `qwen3.5:4b` model via Ollama (`4/6` raw → `6/6` after validator-guided retries).
 
 ---
 
@@ -56,6 +58,16 @@ Every metric below is deterministically reproducible via CLI (`nexus ...`) and v
 | **Split Conformal (`C++20`)** | Vovk `k = ceil((n_cal + 1)(1 - α))` order-statistic calibration | **`90.50%` test coverage (target `>= 90.0%`) vs `66.58%` plug-in Gaussian** | Distribution-free finite-sample marginal validity under skewed noise |
 | **Doubly-Robust OPE (`C++20`)** | `clang++ -O3` Dudík-Langford-Li `DR` + `SNIPS` counterfactual kernel | **`2.7864 ± 0.0668` vs true `2.7657` (`30.88x` < IPS `3.4056` error)** | Exact C++20-vs-NumPy parity (`max \|Δ\| = 4.00e-15`) |
 | **Live `qwen3.5:4b` Gate** | 6 Simpson's Paradox, Wald `LATE`, Collider, `DR` & Conformal tasks | **Raw `4/6` (`66.7%`) -> Verified `6/6` (`100.0%`, `+33.3%` lift)** | **`0` confounded or under-covered policies** (`benchmarks/real_qwen_causal.json`) |
+
+---
+
+## Scope & Limitations
+
+- **Scale:** ~1.3k lines of Python in `src/` plus a ~100-line C++20 file (`csrc/nexus_kernels.cpp`, DR/SNIPS estimator and conformal quantile) compiled at runtime with `clang++`/`g++` and loaded via `ctypes`, with a NumPy fallback.
+- **Synthetic benchmarks only:** every number above comes from seeded data generated in code (5-variable DAG with `N = 2,500`; DML with `N = 2,000`; conformal split of 140/600/1,200; 1,200 logged bandit rows). Nothing is evaluated on real-world datasets, and everything runs on CPU (no GPU).
+- **Simplified estimators:** DML nuisance models are ridge regressions on a fixed polynomial basis rather than flexible ML learners, and the PC search uses Fisher-z tests (linear-Gaussian assumption) and has only been exercised on a small graph.
+- **Small LLM check:** the Ollama audit is 6 hand-written integer-answer questions for `qwen3.5:4b`; "verified" means the answer passes a hard-coded validator within up to 4 feedback turns. Without a running Ollama server the CLI replays the saved `benchmarks/real_qwen_causal.json` artifact. It is not a general causal-reasoning benchmark.
+- **Not production-hardened:** the FastAPI server has no authentication or deployment hardening; the project is intended for learning and as a reference implementation.
 
 ---
 

@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "nexus-verity"
 version = "1.0.0"
-description = "Pearl Causal DAG & PC Discovery Engine, Chernozhukov Cross-Fitted Double/Debiased ML (DML), Finite-Sample Split Conformal Prediction, Native C++20 Doubly-Robust Counterfactual Policy Evaluator, and Live Qwen-3.5-4B Simpson's-Paradox Gate"
+description = "Causal inference in Python — PC discovery, d-separation, cross-fitted double ML, split conformal, C++ doubly-robust OPE. Educational reference implementation"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.12"
